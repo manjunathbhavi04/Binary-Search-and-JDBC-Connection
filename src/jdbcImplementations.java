@@ -6,8 +6,9 @@ import java.sql.Statement;
 public class jdbcImplementations {
     public static void main(String[] args) throws ClassNotFoundException{
         String jdbcURL = "jdbc:mysql://localhost:3306/students";
-        String username = "root";
-        String password = "root@123";
+        String username = System.getenv("DB_USERNAME");
+        String password = System.getenv("DB_PASSWORD");
+
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
